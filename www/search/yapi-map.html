@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>Search map</title>
+    <meta name="mapview" content="initial-scale=1.0, user-scalable=no, maximum-scale=1"/>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=0efee400-bde0-4e33-a70f-e85531657355&lang=ru_RU"
+            type="text/javascript">
+    </script>
+    <script src="map-interface.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+  </head>
+  <body style="padding: 20px">
+        <a style="padding: 5px 10px; cursor: pointer; background-color: #aeaeee; border: 1px solid #000; margin: 10px; text-decoration: none; border-radius: 4px" href="/">Назад</a>
+    <h1>Карта поисковых работ</h1>
+    <div id="contents" style="position: relative">
+      <div id="mapHolder">
+        <div id="WorkArea">
+          <div id="YMapsView"></div>
+          <div id="SearchWindow" style="position: absolute">
+            <h2>Поиск</h2>
+            Номер квадрата: <span id="squareId"></span></br>
+            Ищут в квадрате: <span id="numSearchers"></span></br>
+            <span id="listSearchers"></span></br>
+          </div>
+          <div id="ActionWindow" style="position: absolute">
+            <div>
+              <img id='photo' src='boy.png'></img>
+              <div class="name">Кривцов Константин</div>
+              <div class="notFound">Не найден</div>
+              <div class="leftAligned">
+                Номер квадрата: <span id="selectSquareId"></span></br>
+                Ищут в квадрате: <span id="selectNumSearchers"></span></br>
+              </div>
+              <div class="buttons">
+                <input type="image" onclick="selectSquare()" src="search.png"></input>
+                <input type="image" onclick="closeSelectSquare()" src="cancel.png"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="card">
+        <h2>Карточка поиска</h2>
+        Номер квадрата: <span id="cardSquareId"></span></br>
+        <img class='photo' src='photo.png'></img>
+        Ищут:
+        <span id="selectListSearchers"></span></br>
+        <div class="buttons">
+          <input style="height:40" type="image" onclick="exitSearch()" src="exit.png"></input>
+          <input style="height:40" type="image" onclick="exitSearch()" src="found.png"></input>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="left" style="float: left">
+        <h2>Карточка пропавшего</h2>
+        <table class="card">
+          <tr>
+            <td>ID</td>
+            <td>Был одет</td>
+          </tr>
+          <tr>
+            <td><div class='title'>Фамилия</div><span><div class='contents' id="lastName">&nbsp;</div></span></td>
+            <td><div class='title'>Головной убор</div><span><div class='contents' id="dressHat">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td><div class='title'>Имя</div><span><div class='contents' id="firstName">&nbsp;</div></span></td>
+            <td><div class='title'>Верх</div><span><div class='contents' id="dressTop">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td><div class='title'>Отчество</div><span><div class='contents' id="patronimicName">&nbsp;</div></span></td>
+            <td><div class='title'>Низ</div><span><div class='contents' id="dressBottom">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td><div class='title'>Дата рождения</div><span><div class='contents' id="birthDate">&nbsp;</div></span></td>
+            <td><div class='title'>Обувь</div><span><div class='contents' id="dressShoes">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td><div class='title'>Рост</div><span><div class='contents' id="height">&nbsp;</div></span></td>
+            <td><div class='title'>Особые приметы</div><span><div class='contents' id="specialMarks">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td><div class='title'>Цвет волос</div><span><div class='contents' id="hairColor">&nbsp;</div></span></td>
+            <td><div class='title'>Болезни</div><span><div class='contents' id="desease">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td><div class='title'>Цвет глаз</div><span><div class='contents' id="eyesColor">&nbsp;</div></span></td>
+            <td><div class='title'>Дата исчезновения</div><span><div class='contents' id="lostDate">&nbsp;</div></span></td>
+          </tr>
+          <tr>
+            <td style="display: none" colspan='2' id='comment'>
+              <div class='title'>Комментарий</div>
+              <span><div class='contents' id="commentText">&nbsp;</div></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="right" style="float: right">
+        <div id="chat">
+          <b>Иванов Иван&gt;</b> Чмоки всем в этом чати!</br>
+          <b>Степанов Степан&gt;</b> Даров, как погода?</br>
+          <b>Александров Александр&gt;</b> И вам не хворать!</br>
+        </div>
+        <textarea onkeypress="submitText(event)" id="chatWindow" style="width: 90%; height: 20%"></textarea>
+      </div>
+
+      <div class="middle">
+        <h2>Памятка поисковика</h2>
+        <ul>
+        <li>ЕДИНЫЙ НОМЕР ДЛЯ ВЫЗОВА ЭКСТРЕННЫХ СЛУЖБ – 112 <a href="tel:112"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>ЕДИНАЯ СЛУЖБА СПАСЕНИЯ: 01 (с сотового телефона – 101) <a href="tel:101"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>ДЕЖУРНАЯ ЧАСТЬ УВД по г. Томску: 02 (с сотового телефона – 102) <a href="tel:102"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>СКОРАЯ МЕДИЦИНСКАЯ ПОМОЩЬ: 03 (с сотового телефона – 103) <a href="tel:103"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>АВАРИЙНАЯ ГАЗОВАЯ СЛУЖБА: 04 (с сотового телефона – 104) <a href="tel:104"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>ПОИСКОВО-СПАСАТЕЛЬНАЯ СЛУЖБА: 003, 76-00-46 <a href="tel:760046"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>ГИБДД: 66-44-22, 66-44-24 <a href="tel:564424"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>ГУ МЧС по Томской области: 51-10-11 <a href="tel:511011"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        <li>Помощь лицам, находящимся в состоянии алкогольного опьянения: 75-38-17 <a href="tel:753817"><img style="height:18px; vertical-align:bottom;" src="call.png"></img></a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

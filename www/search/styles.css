@@ -1,0 +1,305 @@
+@font-face {
+  font-family: "highliner";
+  src: url('Highliner_regular.ttf');
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url('Roboto-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  font-family: roboto, arial, helvetica;
+  font-size: 12pt;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  line-height: 0.8em;
+  font-family: highliner, arial, helvetica;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 80pt;
+  margin-bottom: 45px;
+}
+
+h2 {
+  font-size: 60pt;
+  margin-bottom: 10px;
+}
+
+#card .photo {
+  width: 40%;
+  margin: 20 auto;
+  display: block;
+}
+
+#card {
+  float: right;
+  width: 20%;
+  padding-left: 20px;
+  height: 100%;
+  background-color: white;
+  display: none;
+  border-radius: 2px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#card.selected {
+  display: block;
+}
+
+#mapHolder {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#mapHolder.selected {
+  width: 78%;
+  float: left;
+}
+
+#contents {
+  width: 100%;
+  height: 72%;
+  margin: 0;
+  padding: 0;
+}
+
+#WorkArea {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#ActionWindow {
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin-top: 40px;
+  top: 0px;
+  left: 0px;
+}
+
+.leftAligned {
+  padding-top: 10px;
+  text-align: left;
+  width: 60%;
+  margin: 0 auto;
+}
+
+div.name {
+  line-height: 0.8em;
+  font-family: highliner, arial, helvetica;
+  font-size: 30pt;
+  width: 100%;
+  text-align: center;
+}
+
+div.found {
+  line-height: 0.8em;
+  font-family: highliner, arial, helvetica;
+  font-size: 30pt;
+  width: 100%;
+  text-align: center;
+  color: #ff0000;
+}
+
+div.notFound {
+  line-height: 0.8em;
+  font-family: highliner, arial, helvetica;
+  font-size: 30pt;
+  width: 100%;
+  text-align: center;
+  color: #ff0000;
+}
+
+#ActionWindow>div {
+  width: 300px;
+  min-height: 300px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: auto auto;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+div.buttons {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#footer h2 {
+  margin-top: 0;
+}
+
+#footer.selected {
+  display: block;
+}
+
+#footer td span {
+  display: block;
+  overflow: hidden;
+}
+
+#footer .contents {
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+#comment .contents {
+  height: 50px;
+  border-radius: 2px;
+}
+
+#footer .card .title {
+  float: left;
+  margin-right: 10px;
+}
+
+#footer .card td {
+  width: 250px;
+}
+
+#footer .card {
+  font-family: highliner;
+  font-size: 30pt;
+  line-height: 0.8em;
+  text-transform: uppercase;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+table {
+  border-spacing: 9px 0;
+}
+
+#footer {
+  display: none;
+  width: 100%;
+  height: 440px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+#chatWindow {
+  background-color: #f2f2f2;
+  border-radius: 2px;
+  border: none;
+}
+
+#photo {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+#chat {
+  width: 97%;
+  height: 70%;
+  float: right;
+  margin-left: 20px;
+  margin-top: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#footer>.left {
+  padding-left: 10px;
+  width: 30.5%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  float: left;
+}
+
+#footer>.middle {
+  float: right;
+  padding-left: 10px;
+  margin-left: 20px;
+  margin-right: 1%;
+  width: 42%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  white-space: nowrap;
+  line-height: 1em;
+}
+
+#SearchWindow li, .middle li {
+  white-space: normal;
+  line-height: 1em;
+}
+
+li::before {
+  content: "•";
+  color: #5b8300;
+  display: inline-block;
+  font-size: 2em;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right:10px;
+  margin-left: -20px;
+}
+
+.item {
+  vertical-align: middle;
+  display: inline-block;
+  width: 95%;
+  white-space: normal;
+}
+
+.item div {
+}
+
+#footer>.right {
+  width: 20.5%;
+  padding-left: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  float: right;
+}
+
+#footer>div {
+  height: 98%;
+  background-color: white;
+}
+
+#SearchWindow {
+  width: 305px;
+  min-height: 200px;
+  display: none;
+  background-color: white;
+  padding-left: 10px;
+  top: 45px;
+  left: 48px;
+  border-radius: 2px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#YMapsView {
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
