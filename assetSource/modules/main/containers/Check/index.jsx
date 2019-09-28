@@ -6,6 +6,8 @@ import {selectData, selectKey} from "../../selectors";
 import {Header} from "../Header";
 import {LabelText} from "../LabelText";
 import {Button} from "../Button";
+import {Table} from "../Table";
+import {Table2} from "../Table2";
 function mapStateToProps (state) {
     console.log(state, '1');
     console.log(selectKey(state), '2');
@@ -32,7 +34,7 @@ class CheckWrapper extends Component {
       const filePath = e.target.value;
       const fileName = filePath.split('\\').reverse()[0];
       this.setState({
-          fileName: fileName
+          fileName: fileName,
       })
     };
     handleSubmit = (e) => {
@@ -50,7 +52,7 @@ class CheckWrapper extends Component {
                         console.log('int');
                         const {getCheckData} = this.props;
                         getCheckData(keyId);
-                    }, 5000
+                    }, 1000
                 );
                 this.setState({
                     interval: interval,
@@ -65,12 +67,11 @@ class CheckWrapper extends Component {
                         Проверьте уникальность вашего кода
                     </LabelText>
                 </div>
-                <div className="check__load">
-                    <div className="check__fileName">
-                        {this.state.fileName}
-                    </div>
-                    <img src="img/check.png" alt="" className="check__img" />
-                <form action='/' onSubmit={this.handleSubmit}>
+                <Table2 shingles={[{
+                    filename: this.state.fileName
+                }]} isShow={data} />
+                <div className="check__bg1">
+                             <form action='/' onSubmit={this.handleSubmit}>
                         <div className="check__buttons">
                             <div className="check__button">
                                 <LabelText color='black'>
@@ -89,7 +90,12 @@ class CheckWrapper extends Component {
                     </div>
                 </form>
                 </div>
-
+                <div className="check__name">
+                    <LabelText color='violet'>
+                        Результат
+                    </LabelText>
+                </div>
+                <Table />
         </div>
         );
     }

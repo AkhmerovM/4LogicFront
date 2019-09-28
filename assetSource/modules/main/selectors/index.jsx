@@ -9,4 +9,7 @@ function selectKey (state) {
 function selectData(state) {
     return selectMainModule(state).data;
 }
-export { selectKey, selectData};
+function selectShingles(state) {
+    return selectData(state).shingles;
+}
+export { selectKey, selectData, selectShingles};

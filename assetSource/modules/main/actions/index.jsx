@@ -15,18 +15,14 @@ const actionSetCheckData= (data) => {
 };
 const sendCode = (file) => {
     return async function (dispatch) {
-        const response = await bodyApi.sendCode(file);
-        console.log(response);
-        console.log(response.result);
-        dispatch(actionSendCode(response.result));
+        const {result} = await bodyApi.sendCode(file);
+        dispatch(actionSendCode(result));
     };
 };
 const getCheckData = (key) => {
     return async function (dispatch) {
-        const { data, errors } = await bodyApi.checkData(key).then((response) => response);
-        if (!errors.length) {
-            dispatch(actionSetCheckData(data));
-        }
+        const { result } = await bodyApi.checkData(key).then((response) => response);
+        dispatch(actionSetCheckData(JSON.parse(result)));
     };
 };
 

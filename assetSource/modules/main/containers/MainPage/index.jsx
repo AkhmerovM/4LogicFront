@@ -20,7 +20,7 @@ class MainPage extends Component {
                     </div>
                     <div className="main-page__buttons">
                         <Button src='/check' >Проверить уникальность </Button>
-                        <Button src=''>Проверить ID</Button>
+                        <Button src='/find'>Проверить ID</Button>
                     </div>
                 </div>
                 <div className="main-page__info">

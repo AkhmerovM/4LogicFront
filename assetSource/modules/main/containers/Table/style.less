@@ -1,0 +1,53 @@
+@import '~modules/common/style/variables';
+
+.table {
+    &__tr {
+        display: flex;
+    }
+    &__tr:nth-child(2n) {
+        background-color: @White1;
+    }
+    &__tr:nth-child(2n + 1) {
+        background-color: @White2;
+    }
+    &__th {
+        background-color: @DarkBlue;
+        color: #fff;
+        border-right: 1px solid #fff;
+    }
+    &__td {
+
+    }
+    &__th, &__td {
+        padding: 20px 10px;
+        text-align: center;
+        border-bottom: 0;
+    }
+    &__th-name {
+        flex: 2;
+    }
+    &__th-region {
+        flex: 3;
+    }
+    &__th-percent {
+        flex: 1;
+    }
+    &__th-unique {
+        flex: 4;
+        min-width: 400px;
+    }
+    &__td-name {
+        flex: 2;
+    }
+    &__td-region {
+        flex: 3;
+    }
+    &__td-percent {
+        flex: 1;
+    }
+    &__td-unique {
+        flex: 4;
+        min-width: 400px;
+        background-color: @White1;
+    }
+}
