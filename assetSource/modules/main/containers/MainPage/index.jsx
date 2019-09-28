@@ -3,115 +3,78 @@ import './style.less';
 import { LogoPng } from 'modules/hackaton/components/Logo';
 import { Link } from 'react-router-dom';
 import { BoxButton } from 'modules/hackaton/components/BoxButton';
+import {Header} from "../Header";
+import {Button} from "../Button";
+import {LabelText} from "../LabelText";
+import {Footer} from "../Footer";
 class MainPage extends Component {
     render () {
         return (
             <div className='main-page'>
-                <img className="main-page__background"src="/img/background.jpg" alt="" />
-                <div className="main-page__content">
-                    <div className="main-page__header">
-                        <div className="main-page__header-left">
-                            <Link key={30} to={`/`}>
-                                <LogoPng />
-                            </Link>
-                        </div>
-                        <div className="main-page__header-right">
-                            <div className="main-page__registration">
-                                <Link key={10} to={`/info/registration`}>
-                                    <BoxButton>Регистрация</BoxButton>
-                                </Link>
-                            </div>
-                            <Link key={20} to={`/info/login`}>
-                                <BoxButton color='orange'>Вход</BoxButton>
-                            </Link>
-
-                        </div>
-                    </div>
+                <Header />
+                <div className="main-page__actions">
                     <div className="main-page__name">
-                        Сервис для организации поиска пропавших людей
+                        <LabelText>
+                            Проверьте уникальность вашего кода
+                        </LabelText>
                     </div>
-                    <div className="main-page__actions">
-                        <Link key={50} to='#'>
-                            <BoxButton>Стать волонтером</BoxButton>
-                        </Link>
-                        <Link key={60} to='/info/lose'>
-                            <BoxButton>Сообщить о пропавшем</BoxButton>
-                        </Link>
-                        <Link key={70} to='#'>
-                            <BoxButton>Сообщить о найденном</BoxButton>
-                        </Link>
-                    </div>
-                    <div className="main-page__rules-name">
-                         Правила пользования сервисом "Волонтер в Томске"
-                    </div>
-                    <div className="main-page__rules">
-                        Сервис «Волонтер в Томске» предназначен для поиска пропавших людей волонтерами. Теперь не нужно собирать группу и распределять людей по квадратам поиска — сервис делает это за вас, и таким образом облегчает процесс.
-                    </div>
-                    <div className="main-page__icons">
-                        <div className='main-page__icon'>
-                            <div className='icon__circle' />
-                            <img className='icon__img' src="/img/boy.png" alt="" />
-                            <div className="icon__text">Зарегистрируйся как волонтер</div>
-                        </div>
-                        <div className='main-page__icon'>
-                            <div className='icon__circle' />
-                            <img className='icon__img' src="/img/ded.png" alt="" />
-                            <div className="icon__text">Выбери пропавшего</div>
-                        </div>
-                        <div className='main-page__icon'>
-                            <div className='icon__circle' />
-                            <img className='icon__img3' src="/img/group.png" alt="" />
-                            <div className="icon__text">Присоединись к команде волонтеров</div>
-                        </div>
-                        <div className='main-page__icon'>
-                            <div className='icon__circle' />
-                            <img className='icon__img' src="/img/map.svg" alt="" />
-                            <div className="icon__text">Начни поиск</div>
-                        </div>
-                    </div>
-                    <div className="main-page__become">
-                        <Link key={70} to='#'>
-                            <BoxButton color='orange'>Стать волонтером</BoxButton>
-                        </Link>
+                    <div className="main-page__buttons">
+                        <Button src='' text='Проверить уникальность' />
+                        <Button src='' text='Проверить ID' />
                     </div>
                 </div>
-                <div className="main-page__volon">
-                    <img className="main-page__volon-img" src="img/volon.jpg" alt="" />
-                    <div className="main-page__volon-name">Что делать если пропал человек</div>
-                    <div className="main-page__volon-data">
-                        <div className="main-page__volon-text">
-                            Сервис «Волонтер в Томске» предназначен для поиска пропавших людей волонтерами. Теперь не нужно собирать группу и распределять людей по квадратам поиска — сервис делает это за вас, и таким образом облегчает процесс.
+                <div className="main-page__info">
+                <div className="main-page__bg"/>
+                    <div className="main-page__main">
+                    <div className="main-page__info-wrapper">
+                        <div className="main-page__info-first">
+                            <LabelText color='violet'>
+                                Что такое Дублирование  програмного кода?
+                            </LabelText>
                         </div>
-                        <div>
-                            <Link key={80} to={`#`}>
-
-                                <BoxButton>сообщить о пропавшем</BoxButton>
-                            </Link>
+                        <div className="main-page__info-second">
+                            Дублирование програмного кода — это просто схожие фрагменты исходного кода. В основном они появляются при копировании, даже не смотря на то, что копирование является общеизвестно плохой практикой.
                         </div>
                     </div>
+                    <div className="main-page__info-wrapper">
+                        <div className="main-page__info-first">
+                            <LabelText color='violet'>Зачем нужно проверять дублирование програмного кода?</LabelText>
+                        </div>
+                        <div className="main-page__info-second">
+                            Законодательством РФ запрещено дублирование или повторное приобретение одного и того же програмного кода. В связи с этим при разработке информационных систем и прочих програмных продуктов  за бюджетные средства проверяющие программисты затрачивают огромное количество времени на проверку уникальности кода, что увеличивает их стоимость и срок выпуска программного  продукта и сервисов.
+                        </div>
+                    </div>
+                    </div>
+                    <div className="main-page__bg"/>
                 </div>
-
-                <div className="main-page__margin">
-                    <div className="main-page__volon">
-                        <img className="main-page__volon-img" src="img/loseBoy.jpg" alt="" />
-                        <div className="main-page__volon-name">Что делать если вы нашли человека</div>
-                        <div className="main-page__volon-data">
-                            <div className="main-page__volon-text">
-                            Сервис «Волонтер в Томске» предназначен для поиска пропавших людей волонтерами. Теперь не нужно собирать группу и распределять людей по квадратам поиска — сервис делает это за вас, и таким образом облегчает процесс.
+                <div className="main-page__description">
+                    <div className="main-page__description-name">
+                        <LabelText color='violet'>Как пользоваться системой ЦЕНТРА СЕРТИФИКАЦИИ УНИКАЛЬНОСТИ ПРОГРАМНОГО КОДА?</LabelText>
+                    </div>
+                    <div className="main-page__description-title">
+                                <div className="main-page__description-title1">исполнитель</div>
+                            <div className="main-page__description-title2">заказчик</div>
                             </div>
-                            <div>
-                                <Link key={70} to={`#`}>
+                        <div className="main-page__description-wrapper">
 
-                                    <BoxButton>сообщить о найденном</BoxButton>
-                                </Link>
-                            </div>
-                        </div>
+                    <div className="main-page__description1">
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/1.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/2.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/3.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/4.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/5.png'/></div>
+                    </div>
+                        <div className="main-page__description2">
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/6.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/7.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/8.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/9.png'/></div>
+                        <div className="main-page__description-item"><img className="main-page__description-img" src='img/10.png'/></div>
                     </div>
                 </div>
-                <div className='main-page__footer' >
-                    <img className="main-page__footer-img" src="/img/footer.png" alt="" />
                 </div>
-            </div>
+                <Footer/>
+        </div>
         );
     }
 }
