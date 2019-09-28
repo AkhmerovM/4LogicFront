@@ -7,7 +7,7 @@ class Header extends Component {
             <div className="header">
                 <div className="header__wrapper">
                     <Link to='/'>
-                        <img src='/img/logo.png' />
+                        <img className='header__img' src='/img/logo.png' />
                     </Link>
                 </div>
                     <div className="header__line" />

@@ -5,6 +5,7 @@ import {getCheckData, sendCode} from "../../actions";
 import {selectData, selectKey} from "../../selectors";
 import {Header} from "../Header";
 import {LabelText} from "../LabelText";
+import {Button} from "../Button";
 function mapStateToProps (state) {
     console.log(state, '1');
     console.log(selectKey(state), '2');
@@ -27,6 +28,13 @@ class CheckWrapper extends Component {
             interval: '',
         }
     }
+    handleChange = (e) => {
+      const filePath = e.target.value;
+      const fileName = filePath.split('\\').reverse()[0];
+      this.setState({
+          fileName: fileName
+      })
+    };
     handleSubmit = (e) => {
         e.preventDefault();
         const file = document.getElementById('file');
@@ -57,13 +65,30 @@ class CheckWrapper extends Component {
                         Проверьте уникальность вашего кода
                     </LabelText>
                 </div>
+                <div className="check__load">
+                    <div className="check__fileName">
+                        {this.state.fileName}
+                    </div>
+                    <img src="img/check.png" alt="" className="check__img" />
                 <form action='/' onSubmit={this.handleSubmit}>
-                    <span>{this.state.fileName}</span>
-                    <input type="file" id='file' className="check__input"/>
-                    <div>
-                        <input type="submit" value='Проверить' />
+                        <div className="check__buttons">
+                            <div className="check__button">
+                                <LabelText color='black'>
+                                    Выбрать файл
+                                    <input type="file" id='file' onChange={this.handleChange} className="check__input"/>
+                                </LabelText>
+                            </div>
+                            <div>
+                            <div className="check__button check__button_violet check__button-text_white">
+                               <LabelText color='white'>
+                                   Проверить уникальность
+                                     <input className='check__submit' type="submit" value='Проверить уникальность' />
+                               </LabelText>
+                            </div>
+                            </div>
                     </div>
                 </form>
+                </div>
 
         </div>
         );
