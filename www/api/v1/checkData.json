@@ -1,0 +1,8 @@
+{
+    "data": {
+        "id": 11,
+        "result": {"shingles": {"1": [{"filename": "blockchain-explorer", "match": 0.1}, {"filename": "apply-block", "match": 23.11}], "2": [{"filename": "dht-server", "match": 0.15}], "5": [{"filename": "token-manager", "match": 1.94}], "6": [{"filename": "validator-group", "match": 1.36}], "7": [{"filename": "apply-block_copy", "match": 100.0}]}},
+        "guid": "7073d26e-e1d6-11e9-82d6-c85b765f0982"
+    },
+    "errors": []
+}

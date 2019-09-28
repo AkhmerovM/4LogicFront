@@ -19,7 +19,7 @@ class MainPage extends Component {
                         </LabelText>
                     </div>
                     <div className="main-page__buttons">
-                        <Button src='' text='Проверить уникальность' />
+                        <Button src='/check' text='Проверить уникальность' />
                         <Button src='' text='Проверить ID' />
                     </div>
                 </div>

@@ -1,11 +1,16 @@
 import { BaseApi } from './base-api';
 
 class bodyApi extends BaseApi {
-    static getPostList () {
-        return this.get('/api/v1/post.json');
+    static sendCode (file) {
+        console.log(file);
+        const formData  = new FormData();
+        formData.append('source', file);
+        return this.post('http://127.0.0.1:8000/compare/compare', {
+            body: formData
+        });
     }
-    static getPeople () {
-        return this.get('http://localhost:8080/character');
+    static checkData(id) {
+        return this.get(`http://127.0.0.1:8000/compare/result?id=${id}`);
     }
 }
 

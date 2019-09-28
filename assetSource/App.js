@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import initStore from 'store';
 import { MainPage } from 'modules/main/containers/MainPage'
 import { Route, Switch } from 'react-router'
+import {Check} from "./modules/main/containers/Check";
 
 const store = initStore();
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
           <Provider store={store}>
               <Switch>
                   <Route component={MainPage} exact path='/' />
+                  <Route component={Check} exact path='/check' />
               </Switch>
           </Provider>
       </BrowserRouter>

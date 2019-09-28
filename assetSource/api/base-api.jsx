@@ -8,8 +8,8 @@ function getOptions (options, method) {
         ...result,
         credentials: 'include',
         headers: {
-            ...result.headers,
-            'X-HTTP-METHOD-OVERRIDE': method
+            ...result.headers
+            //'X-HTTP-METHOD-OVERRIDE': method
         },
         method: 'POST'
     };
@@ -20,7 +20,7 @@ class BaseApi {
         return fetch(url).then(response => response.json());
     }
     static post (url, options) {
-        return fetch(url, getOptions(options, 'POST'));
+        return fetch(url, getOptions(options, 'POST')).then(response => response.json());
     }
 }
 export { BaseApi };
