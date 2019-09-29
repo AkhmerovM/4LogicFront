@@ -74,7 +74,7 @@ class CheckWrapper extends Component {
                     </LabelText>
                 </div>
                 <Table2 shingles={[{
-                    filename: this.state.fileName
+                    filename: this.state.fileName,
                 }]} isShow={data} />
                 <div className="check__bg1">
                              <form action='/' onSubmit={this.handleSubmit}>
@@ -103,6 +103,10 @@ class CheckWrapper extends Component {
                 </div>
                 {`guid: ${keyId}`}
                 <Table />
+
+                <LabelText color='violet'>
+                  &nbsp; {(this.props.keyId) ? (<span>ID Результата: {this.props.keyId}</span>) : null}
+                </LabelText>
         </div>
         );
     }
