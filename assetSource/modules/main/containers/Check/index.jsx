@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DonutChart from 'react-donut-chart';
 import './style.less';
 import {connect} from 'react-redux';
 import {getCheckData, removeData, sendCode} from "../../actions";
@@ -8,10 +9,12 @@ import {LabelText} from "../LabelText";
 import {Button} from "../Button";
 import {Table} from "../Table";
 import {Table2} from "../Table2";
+import { selectShingles} from "../../selectors";
 function mapStateToProps (state) {
     return {
         keyId: selectKey(state),
         data: selectData(state),
+        shingles: selectShingles(state),
     }
 }
 function mapDispatchToProps () {
@@ -49,6 +52,23 @@ class CheckWrapper extends Component {
         const file = document.getElementById('file');
         const {sendCode} = this.props;
         sendCode(file.files[0]);
+    };
+    drawChart(shingles) {
+        if(shingles) {
+            return (<div className='pieChart'>
+                  <DonutChart
+                      data={[{
+                        label: 'Уникальный код, %',
+                        value: shingles[0].match
+                      },
+                      {
+                        label: 'Заимствованный код, %',
+                        value: 100 - shingles[0].match
+                      }]} />
+                </div>);
+        } else {
+            return null;
+        }
     };
     render () {
         const {keyId, data} = this.props;
@@ -101,15 +121,14 @@ class CheckWrapper extends Component {
                         Результат
                     </LabelText>
                 </div>
-                {`guid: ${keyId}`}
-                <Table />
-
                 <LabelText color='violet'>
-                  &nbsp; {(this.props.keyId) ? (<span>ID Результата: {this.props.keyId}</span>) : null}
+                  &nbsp; {(this.props.keyId) ? (<span>Код результата: {this.props.keyId}</span>) : null}
                 </LabelText>
+                <Table />
+                { this.drawChart(this.props.shingles) }
         </div>
         );
-    }
+    };
 }
 const Check = connect(mapStateToProps, mapDispatchToProps())(CheckWrapper);
 export { Check };
