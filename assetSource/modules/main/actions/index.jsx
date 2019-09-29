@@ -28,6 +28,7 @@ const getCheckData = (key) => {
 const removeData = () => {
     return async function (dispatch) {
         dispatch(actionSetCheckData(''));
+        dispatch(actionSendCode(''));
     };
 };
 
