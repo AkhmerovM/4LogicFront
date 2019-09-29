@@ -42,7 +42,6 @@ class TableWrapper extends Component {
                   <th className='table2__th table__th-unique'>Регион</th>
               </tr>
               {shingles.map(this.renderShingle)}
-
           </div>
       )
 

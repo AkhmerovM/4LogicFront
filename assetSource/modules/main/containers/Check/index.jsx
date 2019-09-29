@@ -34,6 +34,10 @@ class CheckWrapper extends Component {
             guid: null,
         }
     }
+    componentDidMount() {
+        const {removeData} = this.props;
+        removeData();
+    }
     handleChange = (e) => {
         const {removeData} = this.props;
       const filePath = e.target.value;
@@ -58,11 +62,11 @@ class CheckWrapper extends Component {
             return (<div className='pieChart'>
                   <DonutChart
                       data={[{
-                        label: 'Уникальный код, %',
+                        label: 'Заимствованный код, %',
                         value: shingles[0].match
                       },
                       {
-                        label: 'Заимствованный код, %',
+                        label: 'Уникальный код, %',
                         value: 100 - shingles[0].match
                       }]} />
                 </div>);
@@ -78,7 +82,7 @@ class CheckWrapper extends Component {
                     () => {
                         const {getCheckData, keyId: newKey} = this.props;
                         getCheckData(newKey);
-                    }, 3000
+                    }, 1000
                 );
                 this.setState({
                     interval: interval,
@@ -124,8 +128,7 @@ class CheckWrapper extends Component {
                 <LabelText color='violet'>
                   &nbsp; {(this.props.keyId) ? (<span>Код результата: {this.props.keyId}</span>) : null}
                 </LabelText>
-                <Table />
-                { this.drawChart(this.props.shingles) }
+                <Table chart={ this.drawChart(this.props.shingles) } />
         </div>
         );
     };

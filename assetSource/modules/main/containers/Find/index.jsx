@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import './style.less';
 import {connect} from 'react-redux';
 import {getCheckData, removeData, sendCode} from "../../actions";
-import {selectData, selectKey} from "../../selectors";
+import {selectData, selectShingles} from "../../selectors";
 import {Header} from "../Header";
 import {LabelText} from "../LabelText";
-import {Button} from "../Button";
 import {Table} from "../Table";
-import {Table2} from "../Table2";
-import {bindActionCreators} from "redux";
+import DonutChart from "react-donut-chart";
 function mapStateToProps (state) {
     return {
+        shingles: selectShingles(state),
         data: selectData(state),
     }
 }
@@ -35,7 +34,25 @@ class FindWrapper extends Component {
 
         getCheckData(id)
     };
+    drawChart(shingles) {
+        if(shingles.length) {
+            return (<div className='pieChart'>
+                  <DonutChart
+                      data={[{
+                          label: 'Заимствованный код, %',
+                          value: shingles[0].match
+                      },
+                          {
+                              label: 'Уникальный код, %',
+                              value: 100 - shingles[0].match
+                          }]} />
+                </div>);
+        } else {
+            return null;
+        }
+    };
     render () {
+        const {shingles = []} = this.props;
         return (
             <div className='find'>
                 <Header/>
@@ -50,7 +67,8 @@ class FindWrapper extends Component {
                         </div>
                     </div>
                 </div>
-                <Table />
+                <Table chart={ this.drawChart(shingles) } />
+
 
         </div>
         );
