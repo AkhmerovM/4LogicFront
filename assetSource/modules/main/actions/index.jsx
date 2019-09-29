@@ -25,5 +25,10 @@ const getCheckData = (key) => {
         dispatch(actionSetCheckData(JSON.parse(result)));
     };
 };
+const removeData = () => {
+    return async function (dispatch) {
+        dispatch(actionSetCheckData(''));
+    };
+};
 
-export { sendCode, getCheckData };
+export { sendCode, getCheckData, removeData};
