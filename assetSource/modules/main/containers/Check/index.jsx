@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.less';
 import {connect} from 'react-redux';
-import {getCheckData, sendCode} from "../../actions";
+import {getCheckData, removeData, sendCode} from "../../actions";
 import {selectData, selectKey} from "../../selectors";
 import {Header} from "../Header";
 import {LabelText} from "../LabelText";
@@ -9,8 +9,6 @@ import {Button} from "../Button";
 import {Table} from "../Table";
 import {Table2} from "../Table2";
 function mapStateToProps (state) {
-    console.log(state, '1');
-    console.log(selectKey(state), '2');
     return {
         keyId: selectKey(state),
         data: selectData(state),
@@ -19,7 +17,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps () {
     return {
         getCheckData,
-        sendCode
+        sendCode,
+        removeData
     }
 }
 class CheckWrapper extends Component {
@@ -28,13 +27,21 @@ class CheckWrapper extends Component {
         this.state = {
             fileName: '',
             interval: '',
+            needSync: false,
+            guid: null,
         }
     }
     handleChange = (e) => {
+        const {removeData} = this.props;
       const filePath = e.target.value;
       const fileName = filePath.split('\\').reverse()[0];
+        removeData();
+        if (this.state.interval) {
+            clearInterval(this.state.interval);
+        }
       this.setState({
-          fileName: fileName
+          fileName: fileName,
+          interval: '',
       })
     };
     handleSubmit = (e) => {
@@ -45,6 +52,7 @@ class CheckWrapper extends Component {
     };
     render () {
         const {keyId, data} = this.props;
+        console.log(data, '=========');
         if(keyId && !data) {
             if (!this.state.interval) {
                 let interval = setInterval(
@@ -52,7 +60,7 @@ class CheckWrapper extends Component {
                         console.log('int');
                         const {getCheckData} = this.props;
                         getCheckData(keyId);
-                    }, 1000
+                    }, 3000
                 );
                 this.setState({
                     interval: interval,
@@ -95,6 +103,7 @@ class CheckWrapper extends Component {
                         Результат
                     </LabelText>
                 </div>
+                {`guid: ${keyId}`}
                 <Table />
 
                 <LabelText color='violet'>
