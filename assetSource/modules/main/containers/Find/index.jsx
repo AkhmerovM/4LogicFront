@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import './style.less';
 import {connect} from 'react-redux';
 import {getCheckData, removeData, sendCode} from "../../actions";
-import {selectData, selectShingles} from "../../selectors";
+import {selectData, selectKey, selectShingles} from "../../selectors";
 import {Header} from "../Header";
 import {LabelText} from "../LabelText";
 import {Table} from "../Table";
 import DonutChart from "react-donut-chart";
+import {Footer2} from "../Footer2";
 function mapStateToProps (state) {
     return {
+        keyId: selectKey(state),
         shingles: selectShingles(state),
         data: selectData(state),
     }
@@ -23,6 +25,9 @@ function mapDispatchToProps () {
 class FindWrapper extends Component {
     constructor() {
         super();
+        this.state = {
+            guid: null
+        }
     }
     componentDidMount() {
         const {removeData} = this.props;
@@ -31,7 +36,9 @@ class FindWrapper extends Component {
     handleChange = () => {
         const id = document.getElementById('input').value;
         const {getCheckData} = this.props;
-
+        this.setState({
+            guid: id,
+        });
         getCheckData(id)
     };
     drawChart(shingles) {
@@ -52,7 +59,7 @@ class FindWrapper extends Component {
         }
     };
     render () {
-        const {shingles = []} = this.props;
+        const {shingles = [], keyId} = this.props;
         return (
             <div className='find'>
                 <Header/>
@@ -68,6 +75,7 @@ class FindWrapper extends Component {
                     </div>
                 </div>
                 <Table chart={ this.drawChart(shingles) } />
+                <Footer2 guid={this.state.guid} />
 
 
         </div>

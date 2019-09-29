@@ -10,6 +10,7 @@ import {Button} from "../Button";
 import {Table} from "../Table";
 import {Table2} from "../Table2";
 import { selectShingles} from "../../selectors";
+import {Footer2} from "../Footer2";
 function mapStateToProps (state) {
     return {
         keyId: selectKey(state),
@@ -129,6 +130,7 @@ class CheckWrapper extends Component {
                   &nbsp; {(this.props.keyId) ? (<span>Код результата: {this.props.keyId}</span>) : null}
                 </LabelText>
                 <Table chart={ this.drawChart(this.props.shingles) } />
+                <Footer2 guid={keyId} />
         </div>
         );
     };
