@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14577477-d6e4-4f8c-901a-9f55bd16c984" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+            <state relative-caret-position="287">
+              <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -47,8 +47,8 @@
       <file leaf-file-name="style.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="225">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -128,7 +128,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
@@ -179,11 +179,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+            <state relative-caret-position="195">
+              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -412,10 +412,11 @@
       <find>item</find>
       <find>onChan</find>
       <find>disp</find>
-      <find>sub</find>
       <find>butt</find>
       <find>img</find>
       <find>data</find>
+      <find>input</find>
+      <find>sub</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -459,14 +460,14 @@
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Table/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Table/style.less" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Table2/style.less" />
-        <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Table2/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/MainPage/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/App.js" />
-        <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/actions/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx" />
+        <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less" />
+        <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less" />
       </list>
     </option>
   </component>
@@ -656,12 +657,12 @@
       <updated>1560070489408</updated>
       <workItem from="1560070490977" duration="1336000" />
       <workItem from="1561299965072" duration="92000" />
-      <workItem from="1569605596450" duration="61563000" />
+      <workItem from="1569605596450" duration="62169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62991000" />
+    <option name="totallyTimeSpent" value="63597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="709" extended-state="6" />
@@ -947,13 +948,6 @@
     <entry file="file://$PROJECT_DIR$/www/img/bg1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Table2/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -975,13 +969,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1019,13 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1033,6 +1013,27 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
