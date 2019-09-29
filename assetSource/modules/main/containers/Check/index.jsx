@@ -34,7 +34,7 @@ class CheckWrapper extends Component {
       const filePath = e.target.value;
       const fileName = filePath.split('\\').reverse()[0];
       this.setState({
-          fileName: fileName,
+          fileName: fileName
       })
     };
     handleSubmit = (e) => {
@@ -68,7 +68,7 @@ class CheckWrapper extends Component {
                     </LabelText>
                 </div>
                 <Table2 shingles={[{
-                    filename: this.state.fileName
+                    filename: this.state.fileName,
                 }]} isShow={data} />
                 <div className="check__bg1">
                              <form action='/' onSubmit={this.handleSubmit}>
@@ -96,6 +96,10 @@ class CheckWrapper extends Component {
                     </LabelText>
                 </div>
                 <Table />
+
+                <LabelText color='violet'>
+                  &nbsp; {(this.props.keyId) ? (<span>ID Результата: {this.props.keyId}</span>) : null}
+                </LabelText>
         </div>
         );
     }
