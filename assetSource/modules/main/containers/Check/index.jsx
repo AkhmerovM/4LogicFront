@@ -63,12 +63,14 @@ class CheckWrapper extends Component {
                   <DonutChart
                       data={[{
                         label: 'Заимствованный код, %',
-                        value: shingles[0].match
+                        value: shingles[0].match,
                       },
                       {
                         label: 'Уникальный код, %',
-                        value: 100 - shingles[0].match
-                      }]} />
+                        value: 100 - shingles[0].match,
+                      }]}
+                      colors={['#3E2382', '#768FBF']}
+                />
                 </div>);
         } else {
             return null;
