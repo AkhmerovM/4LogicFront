@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.less';
 import {connect} from 'react-redux';
-import {getCheckData, sendCode} from "../../actions";
+import {getCheckData, removeData, sendCode} from "../../actions";
 import {selectData, selectKey} from "../../selectors";
 import {Header} from "../Header";
 import {LabelText} from "../LabelText";
@@ -14,16 +14,20 @@ function mapStateToProps (state) {
         data: selectData(state),
     }
 }
-function mapDispatchToProps (dispatch) {
-    return bindActionCreators({
+function mapDispatchToProps () {
+    return {
         getCheckData,
-        sendCode
-    }, dispatch
-    )
+        sendCode,
+        removeData
+}
 }
 class FindWrapper extends Component {
     constructor() {
         super();
+    }
+    componentDidMount() {
+        const {removeData} = this.props;
+        removeData();
     }
     handleChange = () => {
         const id = document.getElementById('input').value;

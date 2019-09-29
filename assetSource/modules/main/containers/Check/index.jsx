@@ -52,14 +52,12 @@ class CheckWrapper extends Component {
     };
     render () {
         const {keyId, data} = this.props;
-        console.log(data, '=========');
         if(keyId && !data) {
             if (!this.state.interval) {
                 let interval = setInterval(
                     () => {
-                        console.log('int');
-                        const {getCheckData} = this.props;
-                        getCheckData(keyId);
+                        const {getCheckData, keyId: newKey} = this.props;
+                        getCheckData(newKey);
                     }, 3000
                 );
                 this.setState({

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14577477-d6e4-4f8c-901a-9f55bd16c984" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assetSource/modules/main/actions/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/actions/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="180">
+              <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -132,8 +131,8 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="196">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -418,6 +417,9 @@
       <find>img</find>
       <find>data</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -462,8 +464,8 @@
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/MainPage/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/App.js" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Find/style.less" />
-        <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/actions/index.jsx" />
+        <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx" />
         <option value="$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx" />
       </list>
     </option>
@@ -654,12 +656,12 @@
       <updated>1560070489408</updated>
       <workItem from="1560070490977" duration="1336000" />
       <workItem from="1561299965072" duration="92000" />
-      <workItem from="1569605596450" duration="60214000" />
+      <workItem from="1569605596450" duration="61563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61642000" />
+    <option name="totallyTimeSpent" value="62991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="709" extended-state="6" />
@@ -675,6 +677,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18409091" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -684,7 +687,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1007,13 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assetSource/modules/main/actions/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1024,10 +1019,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Find/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assetSource/modules/main/containers/Check/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        <state relative-caret-position="196">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
