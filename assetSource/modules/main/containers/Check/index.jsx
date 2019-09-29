@@ -59,7 +59,7 @@ class CheckWrapper extends Component {
         sendCode(file.files[0]);
     };
     drawChart(shingles) {
-        if(shingles) {
+        if(shingles && shingles.length) {
             return (<div className='pieChart'>
                   <DonutChart
                       data={[{
@@ -132,6 +132,9 @@ class CheckWrapper extends Component {
                   &nbsp; {(this.props.keyId) ? (<span>Код результата: {this.props.keyId}</span>) : null}
                 </LabelText>
                 <Table chart={ this.drawChart(this.props.shingles) } />
+                <div className='text-center'>
+                {this.props.shingles && !this.props.shingles.length ? <LabelText color='violet'>Код уникален</LabelText> : ''}
+                </div>
                 <Footer2 guid={keyId} />
         </div>
         );

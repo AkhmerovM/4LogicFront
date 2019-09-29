@@ -42,7 +42,7 @@ class FindWrapper extends Component {
         getCheckData(id)
     };
     drawChart(shingles) {
-        if(shingles.length) {
+        if(shingles && shingles.length) {
             return (<div className='pieChart'>
                   <DonutChart
                       data={[{
@@ -77,6 +77,9 @@ class FindWrapper extends Component {
                     </div>
                 </div>
                 <Table chart={ this.drawChart(shingles) } />
+                                <div className='text-center'>
+                {this.props.shingles && !this.props.shingles.length ? <LabelText color='violet'>Код уникален</LabelText> : ''}
+                                </div>
                 <Footer2 guid={this.state.guid} />
 
 
