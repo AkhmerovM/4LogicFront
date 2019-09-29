@@ -8,59 +8,45 @@ import {LabelText} from "../LabelText";
 import {Button} from "../Button";
 import {Table} from "../Table";
 import {Table2} from "../Table2";
+import {bindActionCreators} from "redux";
 function mapStateToProps (state) {
-    console.log(state, '1');
-    console.log(selectKey(state), '2');
     return {
-        keyId: selectKey(state),
         data: selectData(state),
     }
 }
-function mapDispatchToProps () {
-    return {
+function mapDispatchToProps (dispatch) {
+    return bindActionCreators({
         getCheckData,
         sendCode
-    }
+    }, dispatch
+    )
 }
 class FindWrapper extends Component {
     constructor() {
         super();
-        this.state = {
-            fileName: '',
-            interval: '',
-        }
     }
-    handleChange = (e) => {
-      const filePath = e.target.value;
-      const fileName = filePath.split('\\').reverse()[0];
-      this.setState({
-          fileName: fileName,
-      })
-    };
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const file = document.getElementById('file');
-        const {sendCode} = this.props;
-        sendCode(file.files[0]);
+    handleChange = () => {
+        const id = document.getElementById('input').value;
+        const {getCheckData} = this.props;
+
+        getCheckData(id)
     };
     render () {
         return (
             <div className='find'>
                 <Header/>
-                <div className="find__name">
+                <div className="find__info">
                     <LabelText color='violet'>
                         Введите индивидуальный ID
                     </LabelText>
-                </div>
-                <input type="text" placeholder='Введите индивидуальный ID' className="find__input" />
-                <Button>
-                    <div className="find__btn">
-                        Готово
+                <div className="find__wrapper">
+                        <input type="text" id='input' placeholder='Введите индивидуальный ID' className="find__input" />
+                        <div onClick={this.handleChange} className="find__btn">
+                            Готово
+                        </div>
                     </div>
-                    </Button>
-                <Table2 shingles={[{
-                    filename: this.state.fileName
-                }]} />
+                </div>
+                <Table />
 
         </div>
         );

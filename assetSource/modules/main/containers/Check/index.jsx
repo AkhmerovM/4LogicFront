@@ -9,8 +9,6 @@ import {Button} from "../Button";
 import {Table} from "../Table";
 import {Table2} from "../Table2";
 function mapStateToProps (state) {
-    console.log(state, '1');
-    console.log(selectKey(state), '2');
     return {
         keyId: selectKey(state),
         data: selectData(state),
@@ -28,6 +26,7 @@ class CheckWrapper extends Component {
         this.state = {
             fileName: '',
             interval: '',
+            guid: null,
         }
     }
     handleChange = (e) => {
